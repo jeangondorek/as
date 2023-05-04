@@ -9,8 +9,10 @@ function criaLinha(bairro){
     let linha = document.createElement("tr")
     let tdId = document.createElement("td")
     let tdNd = document.createElement("td")
+    let tdNdd = document.createElement("td")
     tdId.innerHTML = bairro.id
     tdNd.innerHTML = bairro.name
+    tdNdd.innerHTML = bairro.email
     linha.appendChild(tdId)
     linha.appendChild(tdNd)
 
@@ -26,5 +28,7 @@ function main(){
         tabela.appendChild(linha);
     });
 }
+
+
 
 main();

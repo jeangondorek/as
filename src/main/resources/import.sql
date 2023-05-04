@@ -14,3 +14,11 @@ INSERT INTO tb_cliente(id, name, cpf) VALUES (1, 'Ana', '654654651');
 INSERT INTO tb_cliente(id, name, cpf) VALUES (2, 'afasgas', '6546254651');
 INSERT INTO tb_cliente(id, name, cpf) VALUES (3, 'Aaghhjna', '6542654651');
 INSERT INTO tb_cliente(id, name, cpf) VALUES (4, 'ffgjhj', '6546542651');
+INSERT INTO tb_cliente(id, name, cpf) VALUES (5, 'ffgjhj', '22');
+INSERT INTO tb_cliente(id, name, cpf) VALUES (6, 'ffgjhj', '6546542651');
+INSERT INTO tb_cliente(id, name, cpf) VALUES (7, 'ffgjhj', '6546542651');
+INSERT INTO tb_cliente(id, name, cpf) VALUES (8, 'ffgjhj', '6546542651');
+INSERT INTO tb_cliente(id, name, cpf) VALUES (9, 'ffgjhj', '6546542651');
+INSERT INTO tb_cliente(id, name, cpf) VALUES (10, 'ffgjhj', '6546542651');
+INSERT INTO tb_cliente(id, name, cpf) VALUES (11, 'ffgjhj', '6546542651');
+

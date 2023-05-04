@@ -14,8 +14,10 @@ function perid(){
     let linha = document.createElement("tr")
     let tdId = document.createElement("td")
     let tdNd = document.createElement("td")
+    let tdNdd = document.createElement("td")
     tdId.innerHTML = bairro.id
     tdNd.innerHTML = bairro.name
+    tdNdd.innerHTML = bairro.email
     linha.appendChild(tdId)
     linha.appendChild(tdNd)
     tabela2.appendChild(linha);

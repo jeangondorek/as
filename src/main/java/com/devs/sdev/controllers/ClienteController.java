@@ -4,6 +4,7 @@ import com.devs.sdev.entity.Cliente;
 import com.devs.sdev.repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import java.util.Optional;
 
 import java.util.List;
 
@@ -25,8 +26,32 @@ public class ClienteController {
         return result;
     }
     @PostMapping
-    public Cliente insert(@RequestBody Cliente cliente){
-        Cliente result = repository2.save(cliente);
-        return result;
+    public Cliente inserirCliente(@RequestBody Cliente cliente) {
+        Cliente novoCliente = repository2.save(cliente);
+        return novoCliente;
+    }
+    @PutMapping("/{id}")
+    public Cliente updateCliente(@PathVariable Long id, @RequestBody Cliente clienteAtualizado) {
+        Optional<Cliente> clienteExistente = repository2.findById(id);
+        if(clienteExistente.isPresent()) {
+            Cliente cliente = clienteExistente.get();
+            cliente.setName(clienteAtualizado.getName());
+            cliente.setCpf(clienteAtualizado.getCpf());
+            cliente.setId(clienteAtualizado.getId());
+            repository2.save(cliente);
+            return cliente;
+        }
+        throw new RuntimeException("Cliente não encontrado com o ID: " + id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteCliente(@PathVariable Long id) {
+        Optional<Cliente> clienteExistente = repository2.findById(id);
+        if(clienteExistente.isPresent()) {
+            repository2.deleteById(id);
+        }
+        else {
+            throw new RuntimeException("Cliente não encontrado com o ID: " + id);
+        }
     }
 }
