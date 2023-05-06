@@ -1,24 +1,20 @@
 package com.devs.sdev.entity;
 
-import jakarta.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "tb_user")
+@Document
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private  String name;
+    private String id;
+    private String name;
     private String email;
-    @ManyToOne
-    @JoinColumn(name = "department_id")
-    private Department department;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -38,16 +34,7 @@ public class User {
         this.email = email;
     }
 
-    public Department getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(Department department) {
-        this.department = department;
-    }
-
-    public User(){
-
+    public User() {
     }
 
 }

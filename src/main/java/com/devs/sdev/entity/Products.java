@@ -1,16 +1,23 @@
 package com.devs.sdev.entity;
 
-import jakarta.persistence.*;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.annotation.Id;
 
-@Entity
-@Table(name = "tb_products")
+@Document
 public class Products {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
     private String name;
     private String color;
     private Float preco;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -34,14 +41,6 @@ public class Products {
 
     public void setPreco(Float preco) {
         this.preco = preco;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public Products(){

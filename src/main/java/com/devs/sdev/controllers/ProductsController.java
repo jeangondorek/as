@@ -10,7 +10,6 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/products")
 public class ProductsController {
-
     @Autowired
     private ProductRepo repository;
 
@@ -20,7 +19,7 @@ public class ProductsController {
         return result;
     }
     @GetMapping(value = "/{id}")
-    public Products findById(@PathVariable Long id){
+    public Products findById(@PathVariable String id){
         Products result = repository.findById(id).get();
         return result;
     }
