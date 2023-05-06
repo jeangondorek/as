@@ -14,26 +14,35 @@ Rodando aplicação usando swagger no link http://localhost:8080/swagger-ui/inde
 As rotas da api são
 
 - /users
+
 Entidade
+```
     {
         "id": "6456838ab562f760e44cc348",
         "name": "NOME",
         "email": "mail@mail.com"
     }
+```
 - /products
+
 Entidade
+```
     {
         "id": "6456838ab562f760e44cc348",
         "name": "NOME",
         "color": "COLOR",
         "preco": NUMBER
     }
+```
 - /cliente
+
 Entidade
+```
     {
         "id": "6456838ab562f760e44cc348",
         "name": "NOME",
         "email": "mail@mail.com"
     }
+```
 
 *Os id são gerados pelo mongo
