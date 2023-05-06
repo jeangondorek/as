@@ -1,7 +1,8 @@
 # Api para crud java
 
 ## Teclonolias usadas
-- Java 19.0.2
+- Java 17
+- Spring Boot
 - Maven 3.1.0
 - Mongo Atlas
 - Swagger
