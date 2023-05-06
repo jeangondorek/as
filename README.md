@@ -39,6 +39,7 @@ java -jar package.jar
 ### Rotas
 
 Rodando aplicação usando swagger no link http://localhost:8080/swagger-ui/index.html
+Ou acessar o arquivo `swagger.yaml`
 
 As rotas da api são
 
