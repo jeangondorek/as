@@ -7,6 +7,35 @@
 - Mongo Atlas
 - Swagger
 
+### Rodando o projeto
+Necessário configurar a string de conexão do mongo atlas.
+
+#### Clonar o projeto e acessar a pasta onde ele está
+
+- Caso aberto pelo IntelliJ IDEA, só é necessário atualizar o maven e rodar o projeto.
+
+- Comandos para rodar com maven:
+
+```
+mvn clean install -U
+```
+
+```
+mvn package
+```
+
+Dentro da pasta target onde gerou o .jar
+
+```
+java -jar package.jar
+```
+
+- Ou baixar nas releases e rodar com:
+
+```
+java -jar package.jar
+```
+
 ### Rotas
 
 Rodando aplicação usando swagger no link http://localhost:8080/swagger-ui/index.html
