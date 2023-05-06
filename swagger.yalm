@@ -1,0 +1,260 @@
+---
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+- url: http://localhost:8080
+  description: Generated server url
+paths:
+  "/users/{id}":
+    get:
+      tags:
+      - user-controller
+      operationId: findById
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/User"
+    put:
+      tags:
+      - user-controller
+      operationId: update
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/User"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/User"
+    delete:
+      tags:
+      - user-controller
+      operationId: delete
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  "/cliente/{id}":
+    get:
+      tags:
+      - cliente-controller
+      operationId: findById_2
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/Cliente"
+    put:
+      tags:
+      - cliente-controller
+      operationId: updateCliente
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/Cliente"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/Cliente"
+    delete:
+      tags:
+      - cliente-controller
+      operationId: deleteCliente
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  "/users":
+    get:
+      tags:
+      - user-controller
+      operationId: findAll
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/User"
+    post:
+      tags:
+      - user-controller
+      operationId: insert
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/User"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/User"
+  "/products":
+    get:
+      tags:
+      - products-controller
+      operationId: findAll_1
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/Products"
+    post:
+      tags:
+      - products-controller
+      operationId: insert_1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/Products"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/Products"
+  "/cliente":
+    get:
+      tags:
+      - cliente-controller
+      operationId: findAll_2
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/Cliente"
+    post:
+      tags:
+      - cliente-controller
+      operationId: inserirCliente
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/Cliente"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/Cliente"
+  "/products/{id}":
+    get:
+      tags:
+      - products-controller
+      operationId: findById_1
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/Products"
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+    Cliente:
+      type: object
+      properties:
+        id:
+          type: string
+        nome:
+          type: string
+        email:
+          type: string
+    Products:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        color:
+          type: string
+        preco:
+          type: number
+          format: float
